@@ -18,4 +18,6 @@ public class Trip {
 	private String from_date;
 	private String to_date;
 	private String number_of_guests;
+	private String name;
+	private String contact;
 }

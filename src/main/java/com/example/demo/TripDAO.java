@@ -18,4 +18,9 @@ public class TripDAO {
 	public List<Trip> retrieve_trip(){
 		return repo.findAll();
 	}
+	
+	
+	public void delete_trip(Trip trip) {
+		repo.delete(trip);
+	}
 }

@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -52,6 +54,25 @@ public class UserController {
 		if(dao.insert(user)!=null) {
 			mv.setViewName("user_login.jsp");
 		}
+		return mv;
+	}
+	
+	@RequestMapping("/retrieve_user")
+	public ModelAndView retrieve_user(HttpServletRequest req, HttpServletResponse res) {
+		ModelAndView mv = new ModelAndView();
+		List<User> list = repo.findByAll();
+		mv.setViewName("user_retrieve.jsp");
+		mv.addObject("list", list);
+		return mv;
+	}
+	
+	@RequestMapping("/delete_user")
+	public ModelAndView delete_user(HttpServletRequest req, HttpServletResponse res) {
+		ModelAndView mv = new ModelAndView();
+		User user = new User();
+		user.setUsername(req.getParameter("username"));
+		repo.delete(user);
+		mv.setViewName("user_delete.jsp");
 		return mv;
 	}
 }

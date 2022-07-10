@@ -18,4 +18,8 @@ public class UserDAO {
 	public List<User> retrieve(){
 		return repo.findAll();
 	}
+	
+	public void delete(User user) {
+		repo.delete(user);
+	}
 }

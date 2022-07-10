@@ -5,10 +5,16 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Choose your trip</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
-<body>
-<form action="insert_trip">
-<table>
+<body style="background-image: url('ladakh.jpg');">
+<div align="center">
+<h1 class="text-warning">Book your Trip here..</h1>
+</div>
+<div align="center">
+<form action="insert_trip" class="form-group">
+<table class="font-weight-bold">
 <tr>
 <td>Where do you want to go?</td>
 <td>
@@ -22,13 +28,21 @@
 </select>
 </td>
 </tr>
-
-<tr><td>From</td><td><input type="date" name="from_date"></td></tr>
-<tr><td>To</td><td><input type="date" name="to_date"></td></tr>
-
-<tr><td>How many people you are?</td><td><input type="text" name="number_of_guests"></td></tr>
+<tr><td></td></tr>
+<tr><td>From which date?</td><td><input type="date" name="from_date" required></td></tr>
+<tr><td></td></tr>
+<tr><td>To which date?</td><td><input type="date" name="to_date" required></td></tr>
+<tr><td></td></tr>
+<tr><td>How many people you are?</td><td><input type="text" name="number_of_guests" required></td></tr>
+<tr><td></td></tr>
+<tr><td>Enter your name </td><td><input type="text" name="name" required></td></tr>
+<tr><td></td></tr>
+<tr><td>Contact number </td><td><input type="text" name="contact" required></td></tr>
+<tr><td></td></tr>
 </table>
-<input type="submit" value="Book my trip">
+<br>
+<input type="submit" value="Book My Trip" class="btn btn-primary btn-lg">
 </form>
+</div>
 </body>
 </html>
